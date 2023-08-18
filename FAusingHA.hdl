@@ -1,0 +1,13 @@
+// FullAdder using HalfAdder and Or gate
+
+CHIP FAusingHA {
+    IN a, b, c;  
+    OUT sum,     
+        carry;   
+
+    PARTS:
+    // Put you code here:
+       HalfAdder(a=a,b=b,sum=ab,carry=cab);
+       HalfAdder(a=c,b=ab,sum=sum,carry=q);
+       Or(a=cab,b=q,out=carry);
+}
